@@ -23,3 +23,10 @@ class Motorhat(Block):
                                     else Adafruit_MotorHAT.BACKWARD
                 Adafruit_DCMotor(r, 0).run(direction)
                 Adafruit_DCMotor(r, 0).setSpeed(abs(motor))
+
+    def stop(self):
+        super().stop()
+        for r in range(4):
+            direction = Adafruit_MotorHAT.FORWARD
+            Adafruit_DCMotor(r, 0).run(direction)
+            Adafruit_DCMotor(r, 0).setSpeed(0)
