@@ -1,7 +1,7 @@
-Example
+AdafruitMotorhat
 ===========
 
-What does this block do?
+Operates Up to 4 DC motors or 2 Stepper Motors.
 
 Properties
 --------------
