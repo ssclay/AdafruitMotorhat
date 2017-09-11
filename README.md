@@ -1,7 +1,7 @@
 AdafruitMotorhat
 ===========
 
-Operates Up to 4 DC motors or 2 Stepper Motors.
+Operates Up to 4 DC motors.
 
 Properties
 --------------
