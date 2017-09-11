@@ -14,9 +14,9 @@ class TestMotorhat(NIOBlockTestCase):
             mock_MotorHAT.return_value.getMotor.side_effect = [0, 1, 2, 3]
             fwd = mock_MotorHAT.FORWARD = MagicMock()
             rev = mock_MotorHAT.BACKWARD = MagicMock()
-            input_signal = {'a': 1.1,
-                            'b': 259.7,
-                            'c': -67.2,
+            input_signal = {'a': 205,
+                            'b': 43,
+                            'c': 0,
                             'd': 0}
             blk = Motorhat()
             self.configure_block(blk, {'motor0_speed': '{{$a}}',

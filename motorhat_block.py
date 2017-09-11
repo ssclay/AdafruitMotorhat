@@ -18,15 +18,15 @@ class Motorhat(Block):
     def process_signals(self, signals):
         for signal in signals:
             for r in range(4):
-                motor = getattr(self, 'motor{}_speed'.format(r))(signal)
-                direction = Adafruit_MotorHAT.FORWARD if motor >= 0 \
+                speed = getattr(self, 'motor{}_speed'.format(r))(signal)
+                direction = Adafruit_MotorHAT.FORWARD if speed >= 0 \
                                     else Adafruit_MotorHAT.BACKWARD
-                Adafruit_DCMotor(r, 0).run(direction)
-                Adafruit_DCMotor(r, 0).setSpeed(abs(motor))
+                Adafruit_DCMotor(0, r).run(direction)
+                Adafruit_DCMotor(0, r).setSpeed(abs(speed))
 
     def stop(self):
         for r in range(4):
             direction = Adafruit_MotorHAT.FORWARD
-            Adafruit_DCMotor(r, 0).run(direction)
-            Adafruit_DCMotor(r, 0).setSpeed(0)
+            Adafruit_DCMotor(0, r).run(direction)
+            Adafruit_DCMotor(0, r).setSpeed(0)
         super().stop()
