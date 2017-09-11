@@ -1,15 +1,15 @@
 from nio.block.base import Block
-from nio.properties import VersionProperty, IntProperty
+from nio.properties import VersionProperty, IntProperty, FloatProperty
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
 
 class Motorhat(Block):
 
     version = VersionProperty('0.1.0')
-    motor0_speed = IntProperty(title='DC Motor 0 Speed', default=0)
-    motor1_speed = IntProperty(title='DC Motor 1 Speed', default=0)
-    motor2_speed = IntProperty(title='DC Motor 2 Speed', default=0)
-    motor3_speed = IntProperty(title='DC Motor 3 Speed', default=0)
+    motor0_speed = FloatProperty(title='DC Motor 0 Speed', default=0)
+    motor1_speed = FloatProperty(title='DC Motor 1 Speed', default=0)
+    motor2_speed = FloatProperty(title='DC Motor 2 Speed', default=0)
+    motor3_speed = FloatProperty(title='DC Motor 3 Speed', default=0)
 
     def configure(self, context):
         super().configure(context)
